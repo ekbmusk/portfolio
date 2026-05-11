@@ -107,8 +107,8 @@ const achievements = [
   },
   {
     title: "decentrathon 5 — zhasyl.kz",
-    place: "призёр · приз $2000",
-    year: "2025",
+    place: "3 место · приз $2000",
+    year: "2026",
   },
 ];
 
