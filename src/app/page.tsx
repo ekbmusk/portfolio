@@ -150,6 +150,14 @@ const education = [
   },
 ];
 
+const languages = [
+  { name: "казахский", level: "родной" },
+  { name: "русский", level: "родной" },
+  { name: "английский", level: "b2" },
+  { name: "турецкий", level: "a2" },
+  { name: "польский", level: "a2" },
+];
+
 const contacts = [
   {
     label: "email",
@@ -185,6 +193,7 @@ export default function Home() {
       <Achievements />
       <Experience />
       <Education />
+      <Languages />
       <Skills />
       <Contact />
       <Footer />
@@ -501,9 +510,29 @@ function Education() {
   );
 }
 
+function Languages() {
+  return (
+    <Section id="languages" label="08" title="языки">
+      <ul className="divide-y divide-border">
+        {languages.map((l) => (
+          <li
+            key={l.name}
+            className="py-3 flex items-baseline justify-between gap-4"
+          >
+            <span className="text-foreground lowercase">{l.name}</span>
+            <span className="font-mono text-xs text-muted shrink-0 lowercase">
+              {l.level}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  );
+}
+
 function Skills() {
   return (
-    <Section id="skills" label="08" title="стек">
+    <Section id="skills" label="09" title="стек">
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span
@@ -520,7 +549,7 @@ function Skills() {
 
 function Contact() {
   return (
-    <Section id="contact" label="09" title="контакты">
+    <Section id="contact" label="10" title="контакты">
       <p className="text-muted mb-6 lowercase">
         открыт к интересным задачам и сотрудничеству. напишите — отвечаю в
         течение дня.
