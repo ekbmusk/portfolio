@@ -148,6 +148,13 @@ const education = [
     level: "1 курс",
     period: "с 2025",
   },
+  {
+    institution:
+      "специализированная школа-лицей «зерде» для одарённых детей, г. экибастуз",
+    program: "среднее образование",
+    level: "",
+    period: "до 2025",
+  },
 ];
 
 const languages = [
@@ -651,7 +658,7 @@ function Education() {
               </span>
             </div>
             <span className="text-sm text-muted lowercase font-mono">
-              {e.program} · {e.level}
+              {[e.program, e.level].filter(Boolean).join(" · ")}
             </span>
           </li>
         ))}
