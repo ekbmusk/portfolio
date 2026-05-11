@@ -102,7 +102,7 @@ const achievements = [
   },
   {
     title: "astana tech cup",
-    place: "1 место × 2",
+    place: "1 место × 2 · выход в международный финал, турция",
     year: "2025 · 2026",
   },
   {
