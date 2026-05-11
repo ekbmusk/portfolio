@@ -110,6 +110,11 @@ const achievements = [
     place: "3 место · приз $2000",
     year: "2026",
   },
+  {
+    title: "international engineering mindsets competition «pi-synergy»",
+    place: "3 место",
+    year: "2026",
+  },
 ];
 
 const skills = [
