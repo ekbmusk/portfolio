@@ -242,10 +242,160 @@ function Hero() {
         priority
         className="w-full max-w-md h-auto"
       />
+      <div className="mt-5 flex items-center gap-4 max-w-md">
+        <a
+          href="mailto:tuleutaev.bekarys2025@ayu.edu.kz"
+          aria-label="email"
+          title="email"
+          className="opacity-90 hover:opacity-100 hover:scale-105 transition"
+        >
+          <DottedIcon id="email">
+            <rect
+              x="2.2"
+              y="5"
+              width="19.6"
+              height="14"
+              rx="1.5"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.4"
+            />
+            <path
+              d="M3.5 6.8L12 13l8.5-6.2"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.4"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+            />
+          </DottedIcon>
+        </a>
+        <a
+          href="https://github.com/ekbmusk"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="github"
+          title="github"
+          className="opacity-90 hover:opacity-100 hover:scale-105 transition"
+        >
+          <DottedIcon id="github">
+            <path
+              fill="white"
+              d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.02 2.9-.02 3.29 0 .32.22.69.83.57C20.56 22.3 24 17.8 24 12.5 24 5.87 18.63.5 12 .5z"
+            />
+          </DottedIcon>
+        </a>
+        <a
+          href="https://t.me/callmebekaa"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="telegram"
+          title="telegram"
+          className="opacity-90 hover:opacity-100 hover:scale-105 transition"
+        >
+          <DottedIcon id="telegram">
+            <path
+              fill="white"
+              d="M21.5 3.2 2.6 10.5c-1 .4-1 1.7 0 2l4.7 1.5 1.8 5.8c.2.7 1.1.9 1.6.3l2.5-2.7 4.7 3.5c.7.5 1.7.1 1.9-.7l3.3-15c.2-1-.7-1.8-1.6-1.4zM9.3 14.8l9-7.5-7.4 8.5z"
+            />
+          </DottedIcon>
+        </a>
+        <a
+          href="https://instagram.com/bekarysdotme"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="instagram"
+          title="instagram"
+          className="opacity-90 hover:opacity-100 hover:scale-105 transition"
+        >
+          <DottedIcon id="instagram">
+            <rect
+              x="2.2"
+              y="2.2"
+              width="19.6"
+              height="19.6"
+              rx="5"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.2"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="4.6"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.2"
+            />
+            <circle cx="17.5" cy="6.5" r="1.4" fill="white" />
+          </DottedIcon>
+        </a>
+      </div>
       <h1 className="mt-6 text-2xl sm:text-3xl font-medium tracking-tight text-muted lowercase">
         ml/llm-инженерия, робототехника, web3.
       </h1>
     </section>
+  );
+}
+
+function DottedIcon({
+  id,
+  children,
+  size = 56,
+}: {
+  id: string;
+  children: React.ReactNode;
+  size?: number;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      aria-hidden
+      className="block"
+    >
+      <defs>
+        <radialGradient
+          id={`dot-grad-${id}`}
+          cx="30%"
+          cy="25%"
+          r="80%"
+          fx="25%"
+          fy="20%"
+          gradientUnits="objectBoundingBox"
+        >
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="25%" stopColor="#f2f2f2" />
+          <stop offset="60%" stopColor="#808080" />
+          <stop offset="90%" stopColor="#202020" />
+          <stop offset="100%" stopColor="#000000" />
+        </radialGradient>
+        <pattern
+          id={`dot-pattern-${id}`}
+          patternUnits="userSpaceOnUse"
+          width="2"
+          height="2"
+        >
+          <circle
+            cx="1"
+            cy="1"
+            r="0.92"
+            fill={`url(#dot-grad-${id})`}
+          />
+        </pattern>
+        <mask id={`dot-mask-${id}`}>
+          <rect width="24" height="24" fill="black" />
+          {children}
+        </mask>
+      </defs>
+      <rect
+        width="24"
+        height="24"
+        fill={`url(#dot-pattern-${id})`}
+        mask={`url(#dot-mask-${id})`}
+      />
+    </svg>
   );
 }
 
