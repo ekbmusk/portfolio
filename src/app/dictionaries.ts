@@ -1,0 +1,532 @@
+export type Locale = "en" | "ru";
+
+export const locales: Locale[] = ["en", "ru"];
+export const defaultLocale: Locale = "en";
+
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  href: string | null;
+  year: string;
+  status?: string;
+};
+
+type Current = {
+  title: string;
+  summary: string;
+  description: string;
+  tags: string[];
+  href: string | null;
+  type: string | null;
+};
+
+type Bot = {
+  title: string;
+  description: string;
+  href: string;
+};
+
+type Achievement = {
+  title: string;
+  place: string;
+  year: string;
+};
+
+type Experience = {
+  role: string;
+  period: string;
+};
+
+type Education = {
+  institution: string;
+  program: string;
+  level: string;
+  period: string;
+};
+
+type Language = {
+  name: string;
+  level: string;
+};
+
+type Contact = {
+  label: string;
+  value: string;
+  href: string;
+};
+
+export type Dictionary = {
+  metaTitle: string;
+  metaDescription: string;
+  nav: {
+    now: string;
+    projects: string;
+    wins: string;
+    contact: string;
+  };
+  hero: {
+    available: string;
+    intro: string;
+    tagline: string;
+  };
+  sections: {
+    about: string;
+    current: string;
+    projects: string;
+    bots: string;
+    achievements: string;
+    experience: string;
+    education: string;
+    languages: string;
+    skills: string;
+    contact: string;
+  };
+  inDev: string;
+  about: string[];
+  contactCopy: string;
+  madeWith: string;
+  langToggleLabel: string;
+  current: Current[];
+  projects: Project[];
+  bots: Bot[];
+  achievements: Achievement[];
+  experience: Experience[];
+  education: Education[];
+  languages: Language[];
+  skills: string[];
+  contacts: Contact[];
+};
+
+const en: Dictionary = {
+  metaTitle: "bekarysdotme — portfolio",
+  metaDescription: "personal portfolio. projects, skills, contacts.",
+  nav: {
+    now: "now",
+    projects: "projects",
+    wins: "wins",
+    contact: "contact",
+  },
+  hero: {
+    available: "available for projects",
+    intro: "hi, i'm",
+    tagline: "ml/llm engineering, robotics, web3.",
+  },
+  sections: {
+    about: "about",
+    current: "currently in progress",
+    projects: "projects",
+    bots: "telegram bots",
+    achievements: "wins",
+    experience: "experience",
+    education: "education",
+    languages: "languages",
+    skills: "stack",
+    contact: "contact",
+  },
+  inDev: "in development",
+  about: [
+    "i work at the intersection of web, machine learning, and hardware: from edtech platforms and telegram bots to robotics, drones, and llm engineering.",
+    "previously — pavlodar hub. since january 1, 2026 i've been delivering work on government grant projects. winner of google build with ai 2024, two-time astana tech cup champion, decentrathon 5 prize winner.",
+  ],
+  contactCopy:
+    "open to interesting tasks and collaboration. drop a line — i reply within the day.",
+  madeWith: "made with next.js",
+  langToggleLabel: "language",
+  current: [
+    {
+      title: "zhasyl.kz",
+      summary: "carbon offsets on solana",
+      description:
+        "tokenization, fractionalization, and on-chain verification of every tonne of co₂. web3 infrastructure for a transparent carbon credit market.",
+      tags: ["solana", "web3", "climatetech"],
+      href: "https://zhasyl.kz",
+      type: null,
+    },
+    {
+      title: "lab automation",
+      summary: "unified device ecosystem",
+      description:
+        "wiring every lab device into a single system with per-unit tracking and health monitoring. currently shipping a large install: 15 3d printers, 20 vr kits, ~100 physics sensors, drones, and robots.",
+      tags: ["iot", "robotics", "monitoring"],
+      href: null,
+      type: null,
+    },
+    {
+      title: "smart-pasture",
+      summary: "digital livestock control",
+      description:
+        "an agritech solution: counting cattle via cameras and drones; gps trackers with speakers — the shepherd marks a grazing zone on the map and the tracker plays a sound when an animal crosses the virtual fence. accelerometers track activity and health.",
+      tags: ["computer vision", "drones", "iot", "agritech"],
+      href: null,
+      type: "commission",
+    },
+  ],
+  projects: [
+    {
+      title: "stemedu.kz",
+      description:
+        "stem education platform. web development from mockup to production.",
+      tags: ["web", "education"],
+      href: "https://stemedu.kz",
+      year: "2025",
+    },
+    {
+      title: "atomedu.kz",
+      description:
+        "website for an educational initiative in nuclear science and technology.",
+      tags: ["web", "education"],
+      href: "https://atomedu.kz",
+      year: "2025",
+    },
+    {
+      title: "tedx.kz",
+      description:
+        "web project for a local tedx — landing page and event support.",
+      tags: ["web", "events"],
+      href: "https://tedx.kz",
+      year: "2026",
+    },
+    {
+      title: "kazakhstan public procurement monitor",
+      description:
+        "tool for analyzing tenders and lots in kazakhstan's public procurement. more than 200 suspicious lots flagged, significant budget losses prevented. currently offline for technical reasons.",
+      tags: ["analytics", "govtech", "data"],
+      href: null,
+      year: "2025",
+      status: "offline",
+    },
+  ],
+  bots: [
+    {
+      title: "@zhansayaamath_bot",
+      description: "telegram bot for math practice and exam prep.",
+      href: "https://t.me/zhansayaamath_bot",
+    },
+    {
+      title: "@kazakhzerthana_bot",
+      description: "bot for research and experiments in kazakh.",
+      href: "https://t.me/kazakhzerthana_bot",
+    },
+    {
+      title: "@propickerbot",
+      description: "utility bot for picking / choosing.",
+      href: "https://t.me/propickerbot",
+    },
+  ],
+  achievements: [
+    {
+      title: "google build with ai",
+      place: "1st place",
+      year: "2024",
+    },
+    {
+      title: "astana tech cup",
+      place: "1st place × 2 · advanced to the international final, turkey",
+      year: "2025 · 2026",
+    },
+    {
+      title: "decentrathon 5 — zhasyl.kz",
+      place: "3rd place · $2000 prize",
+      year: "2026",
+    },
+    {
+      title: "international engineering mindsets competition «pi-synergy»",
+      place: "3rd place",
+      year: "2026",
+    },
+  ],
+  experience: [
+    {
+      role: "contractor on government grant projects",
+      period: "since jan 2026",
+    },
+    {
+      role: "pavlodar hub",
+      period: "previously",
+    },
+  ],
+  education: [
+    {
+      institution: "khoja akhmet yassawi international kazakh-turkish university",
+      program: "physics",
+      level: "1st year",
+      period: "since 2025",
+    },
+    {
+      institution:
+        "specialized school-lyceum «zerde» for gifted children, ekibastuz",
+      program: "secondary education",
+      level: "",
+      period: "until 2025",
+    },
+  ],
+  languages: [
+    { name: "kazakh", level: "native" },
+    { name: "russian", level: "native" },
+    { name: "english", level: "native" },
+    { name: "turkish", level: "a2" },
+    { name: "polish", level: "a2" },
+  ],
+  skills: [
+    "machine learning",
+    "llm engineering",
+    "robotics",
+    "drones",
+    "3d printers",
+    "solana / web3",
+    "lab automation",
+    "iot",
+    "physics",
+    "python",
+    "rust",
+    "web development",
+    "docker",
+    "telegram bots",
+  ],
+  contacts: [
+    {
+      label: "email",
+      value: "tuleutaev.bekarys2025@ayu.edu.kz",
+      href: "mailto:tuleutaev.bekarys2025@ayu.edu.kz",
+    },
+    {
+      label: "github",
+      value: "github.com/ekbmusk",
+      href: "https://github.com/ekbmusk",
+    },
+    {
+      label: "telegram",
+      value: "@callmebekaa",
+      href: "https://t.me/callmebekaa",
+    },
+    {
+      label: "linkedin",
+      value: "in/bekarysdotme",
+      href: "https://linkedin.com/in/bekarysdotme",
+    },
+    {
+      label: "instagram",
+      value: "@bekarysdotme",
+      href: "https://instagram.com/bekarysdotme",
+    },
+  ],
+};
+
+const ru: Dictionary = {
+  metaTitle: "bekarysdotme — портфолио",
+  metaDescription: "личное портфолио. проекты, навыки, контакты.",
+  nav: {
+    now: "сейчас",
+    projects: "проекты",
+    wins: "победы",
+    contact: "контакты",
+  },
+  hero: {
+    available: "доступен для проектов",
+    intro: "привет, я",
+    tagline: "ml/llm-инженерия, робототехника, web3.",
+  },
+  sections: {
+    about: "обо мне",
+    current: "сейчас в работе",
+    projects: "проекты",
+    bots: "telegram-боты",
+    achievements: "победы",
+    experience: "опыт",
+    education: "образование",
+    languages: "языки",
+    skills: "стек",
+    contact: "контакты",
+  },
+  inDev: "в разработке",
+  about: [
+    "работаю на стыке веба, машинного обучения и железа: от образовательных платформ и telegram-ботов до робототехники, дронов и llm-инженерии.",
+    "раньше — pavlodar hub. с 1 января 2026 года выполняю работы в рамках государственных грант-проектов. победитель google build with ai 2024, двукратный чемпион astana tech cup, призёр decentrathon 5.",
+  ],
+  contactCopy:
+    "открыт к интересным задачам и сотрудничеству. напишите — отвечаю в течение дня.",
+  madeWith: "сделано на next.js",
+  langToggleLabel: "язык",
+  current: [
+    {
+      title: "zhasyl.kz",
+      summary: "углеродный офсет на solana",
+      description:
+        "токенизация, дробление и on-chain верификация каждой тонны co₂. web3-инфраструктура для прозрачного рынка углеродных кредитов.",
+      tags: ["solana", "web3", "climatetech"],
+      href: "https://zhasyl.kz",
+      type: null,
+    },
+    {
+      title: "автоматизация лабораторий",
+      summary: "единая экосистема устройств",
+      description:
+        "внедряю все устройства лаборатории в единую систему с трекингом каждого и мониторингом состояния. сейчас в работе — крупная инсталляция: 15 3d-принтеров, 20 vr-комплектов, ~100 датчиков для физики, дроны и роботы.",
+      tags: ["iot", "robotics", "monitoring"],
+      href: null,
+      type: null,
+    },
+    {
+      title: "smart-pasture",
+      summary: "цифровой контроль скота",
+      description:
+        "решение для аграрного сектора: подсчёт коров по камерам и с дронов; gps-трекеры с динамиками — пастух размечает зону выпаса на карте, и при попытке выйти за виртуальную границу трекер подаёт звуковой сигнал. акселерометры отслеживают активность и состояние животных.",
+      tags: ["computer vision", "drones", "iot", "agritech"],
+      href: null,
+      type: "заказ",
+    },
+  ],
+  projects: [
+    {
+      title: "stemedu.kz",
+      description:
+        "образовательная платформа в сфере stem. веб-разработка от макета до продакшена.",
+      tags: ["web", "education"],
+      href: "https://stemedu.kz",
+      year: "2025",
+    },
+    {
+      title: "atomedu.kz",
+      description:
+        "сайт образовательной инициативы в области атомной науки и технологий.",
+      tags: ["web", "education"],
+      href: "https://atomedu.kz",
+      year: "2025",
+    },
+    {
+      title: "tedx.kz",
+      description:
+        "веб-проект для локального tedx — лендинг и поддержка мероприятия.",
+      tags: ["web", "events"],
+      href: "https://tedx.kz",
+      year: "2026",
+    },
+    {
+      title: "мониторинг госзакупок рк",
+      description:
+        "решение для анализа тендеров и лотов на госзакупках казахстана. выявлено более 200 подозрительных лотов, предотвращены значительные бюджетные потери. сейчас не работает по техническим причинам.",
+      tags: ["analytics", "govtech", "data"],
+      href: null,
+      year: "2025",
+      status: "не работает",
+    },
+  ],
+  bots: [
+    {
+      title: "@zhansayaamath_bot",
+      description: "telegram-бот по математике для подготовки и тренировки.",
+      href: "https://t.me/zhansayaamath_bot",
+    },
+    {
+      title: "@kazakhzerthana_bot",
+      description: "бот для исследований и экспериментов на казахском языке.",
+      href: "https://t.me/kazakhzerthana_bot",
+    },
+    {
+      title: "@propickerbot",
+      description: "утилитарный бот для подбора / выбора.",
+      href: "https://t.me/propickerbot",
+    },
+  ],
+  achievements: [
+    {
+      title: "google build with ai",
+      place: "1 место",
+      year: "2024",
+    },
+    {
+      title: "astana tech cup",
+      place: "1 место × 2 · выход в международный финал, турция",
+      year: "2025 · 2026",
+    },
+    {
+      title: "decentrathon 5 — zhasyl.kz",
+      place: "3 место · приз $2000",
+      year: "2026",
+    },
+    {
+      title: "international engineering mindsets competition «pi-synergy»",
+      place: "3 место",
+      year: "2026",
+    },
+  ],
+  experience: [
+    {
+      role: "исполнитель в государственных грант-проектах",
+      period: "с янв. 2026",
+    },
+    {
+      role: "pavlodar hub",
+      period: "ранее",
+    },
+  ],
+  education: [
+    {
+      institution:
+        "международный казахско-турецкий университет им. ахмеда яссауи",
+      program: "физика",
+      level: "1 курс",
+      period: "с 2025",
+    },
+    {
+      institution:
+        "специализированная школа-лицей «зерде» для одарённых детей, г. экибастуз",
+      program: "среднее образование",
+      level: "",
+      period: "до 2025",
+    },
+  ],
+  languages: [
+    { name: "казахский", level: "родной" },
+    { name: "русский", level: "родной" },
+    { name: "английский", level: "родной" },
+    { name: "турецкий", level: "a2" },
+    { name: "польский", level: "a2" },
+  ],
+  skills: [
+    "machine learning",
+    "llm engineering",
+    "robotics",
+    "drones",
+    "3d-принтеры",
+    "solana / web3",
+    "lab automation",
+    "iot",
+    "physics",
+    "python",
+    "rust",
+    "web development",
+    "docker",
+    "telegram bots",
+  ],
+  contacts: [
+    {
+      label: "email",
+      value: "tuleutaev.bekarys2025@ayu.edu.kz",
+      href: "mailto:tuleutaev.bekarys2025@ayu.edu.kz",
+    },
+    {
+      label: "github",
+      value: "github.com/ekbmusk",
+      href: "https://github.com/ekbmusk",
+    },
+    {
+      label: "telegram",
+      value: "@callmebekaa",
+      href: "https://t.me/callmebekaa",
+    },
+    {
+      label: "linkedin",
+      value: "in/bekarysdotme",
+      href: "https://linkedin.com/in/bekarysdotme",
+    },
+    {
+      label: "instagram",
+      value: "@bekarysdotme",
+      href: "https://instagram.com/bekarysdotme",
+    },
+  ],
+};
+
+export const dictionaries: Record<Locale, Dictionary> = { en, ru };

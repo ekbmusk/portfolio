@@ -1,250 +1,142 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useSyncExternalStore } from "react";
+import {
+  dictionaries,
+  defaultLocale,
+  locales,
+  type Dictionary,
+  type Locale,
+} from "./dictionaries";
 
-const current = [
-  {
-    title: "zhasyl.kz",
-    summary: "углеродный офсет на solana",
-    description:
-      "токенизация, дробление и on-chain верификация каждой тонны co₂. web3-инфраструктура для прозрачного рынка углеродных кредитов.",
-    tags: ["solana", "web3", "climatetech"],
-    href: "https://zhasyl.kz",
-    type: null,
-  },
-  {
-    title: "автоматизация лабораторий",
-    summary: "единая экосистема устройств",
-    description:
-      "внедряю все устройства лаборатории в единую систему с трекингом каждого и мониторингом состояния. сейчас в работе — крупная инсталляция: 15 3d-принтеров, 20 vr-комплектов, ~100 датчиков для физики, дроны и роботы.",
-    tags: ["iot", "robotics", "monitoring"],
-    href: null,
-    type: null,
-  },
-  {
-    title: "smart-pasture",
-    summary: "цифровой контроль скота",
-    description:
-      "решение для аграрного сектора: подсчёт коров по камерам и с дронов; gps-трекеры с динамиками — пастух размечает зону выпаса на карте, и при попытке выйти за виртуальную границу трекер подаёт звуковой сигнал. акселерометры отслеживают активность и состояние животных.",
-    tags: ["computer vision", "drones", "iot", "agritech"],
-    href: null,
-    type: "заказ",
-  },
-];
+const STORAGE_KEY = "portfol-locale";
+const LOCALE_EVENT = "portfol-locale-change";
 
-type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  href: string | null;
-  year: string;
-  status?: string;
-};
+function readLocale(): Locale {
+  if (typeof window === "undefined") return defaultLocale;
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  return stored === "en" || stored === "ru" ? stored : defaultLocale;
+}
 
-const projects: Project[] = [
-  {
-    title: "stemedu.kz",
-    description:
-      "образовательная платформа в сфере stem. веб-разработка от макета до продакшена.",
-    tags: ["web", "education"],
-    href: "https://stemedu.kz",
-    year: "2025",
-  },
-  {
-    title: "atomedu.kz",
-    description:
-      "сайт образовательной инициативы в области атомной науки и технологий.",
-    tags: ["web", "education"],
-    href: "https://atomedu.kz",
-    year: "2025",
-  },
-  {
-    title: "tedx.kz",
-    description:
-      "веб-проект для локального tedx — лендинг и поддержка мероприятия.",
-    tags: ["web", "events"],
-    href: "https://tedx.kz",
-    year: "2026",
-  },
-  {
-    title: "мониторинг госзакупок рк",
-    description:
-      "решение для анализа тендеров и лотов на госзакупках казахстана. выявлено более 200 подозрительных лотов, предотвращены значительные бюджетные потери. сейчас не работает по техническим причинам.",
-    tags: ["analytics", "govtech", "data"],
-    href: null,
-    year: "2025",
-    status: "не работает",
-  },
-];
+function subscribeLocale(onChange: () => void) {
+  window.addEventListener(LOCALE_EVENT, onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    window.removeEventListener(LOCALE_EVENT, onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
 
-const bots = [
-  {
-    title: "@zhansayaamath_bot",
-    description: "telegram-бот по математике для подготовки и тренировки.",
-    href: "https://t.me/zhansayaamath_bot",
-  },
-  {
-    title: "@kazakhzerthana_bot",
-    description: "бот для исследований и экспериментов на казахском языке.",
-    href: "https://t.me/kazakhzerthana_bot",
-  },
-  {
-    title: "@propickerbot",
-    description: "утилитарный бот для подбора / выбора.",
-    href: "https://t.me/propickerbot",
-  },
-];
+function useLocale() {
+  const locale = useSyncExternalStore(
+    subscribeLocale,
+    readLocale,
+    () => defaultLocale,
+  );
 
-const achievements = [
-  {
-    title: "google build with ai",
-    place: "1 место",
-    year: "2024",
-  },
-  {
-    title: "astana tech cup",
-    place: "1 место × 2 · выход в международный финал, турция",
-    year: "2025 · 2026",
-  },
-  {
-    title: "decentrathon 5 — zhasyl.kz",
-    place: "3 место · приз $2000",
-    year: "2026",
-  },
-  {
-    title: "international engineering mindsets competition «pi-synergy»",
-    place: "3 место",
-    year: "2026",
-  },
-];
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    document.title = dictionaries[locale].metaTitle;
+  }, [locale]);
 
-const skills = [
-  "machine learning",
-  "llm engineering",
-  "robotics",
-  "drones",
-  "3d-принтеры",
-  "solana / web3",
-  "lab automation",
-  "iot",
-  "physics",
-  "python",
-  "rust",
-  "web development",
-  "docker",
-  "telegram bots",
-];
+  const update = (next: Locale) => {
+    window.localStorage.setItem(STORAGE_KEY, next);
+    window.dispatchEvent(new Event(LOCALE_EVENT));
+  };
 
-const experience = [
-  {
-    role: "исполнитель в государственных грант-проектах",
-    period: "с янв. 2026",
-  },
-  {
-    role: "pavlodar hub",
-    period: "ранее",
-  },
-];
-
-const education = [
-  {
-    institution:
-      "международный казахско-турецкий университет им. ахмеда яссауи",
-    program: "физика",
-    level: "1 курс",
-    period: "с 2025",
-  },
-  {
-    institution:
-      "специализированная школа-лицей «зерде» для одарённых детей, г. экибастуз",
-    program: "среднее образование",
-    level: "",
-    period: "до 2025",
-  },
-];
-
-const languages = [
-  { name: "казахский", level: "родной" },
-  { name: "русский", level: "родной" },
-  { name: "английский", level: "b2" },
-  { name: "турецкий", level: "a2" },
-  { name: "польский", level: "a2" },
-];
-
-const contacts = [
-  {
-    label: "email",
-    value: "tuleutaev.bekarys2025@ayu.edu.kz",
-    href: "mailto:tuleutaev.bekarys2025@ayu.edu.kz",
-  },
-  {
-    label: "github",
-    value: "github.com/ekbmusk",
-    href: "https://github.com/ekbmusk",
-  },
-  {
-    label: "telegram",
-    value: "@callmebekaa",
-    href: "https://t.me/callmebekaa",
-  },
-  {
-    label: "instagram",
-    value: "@bekarysdotme",
-    href: "https://instagram.com/bekarysdotme",
-  },
-];
+  return [locale, update] as const;
+}
 
 export default function Home() {
+  const [locale, setLocale] = useLocale();
+  const t = dictionaries[locale];
+
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-24">
-      <Header />
-      <Hero />
-      <About />
-      <Current />
-      <Projects />
-      <Bots />
-      <Achievements />
-      <Experience />
-      <Education />
-      <Languages />
-      <Skills />
-      <Contact />
-      <Footer />
+      <Header t={t} locale={locale} setLocale={setLocale} />
+      <Hero t={t} />
+      <About t={t} />
+      <Current t={t} />
+      <Projects t={t} />
+      <Bots t={t} />
+      <Achievements t={t} />
+      <Experience t={t} />
+      <Education t={t} />
+      <Languages t={t} />
+      <Skills t={t} />
+      <Contact t={t} />
+      <Footer t={t} />
     </main>
   );
 }
 
-function Header() {
+function Header({
+  t,
+  locale,
+  setLocale,
+}: {
+  t: Dictionary;
+  locale: Locale;
+  setLocale: (next: Locale) => void;
+}) {
   return (
     <header className="mb-20 flex items-center justify-between font-mono text-sm">
       <Link href="/" className="text-foreground hover:text-accent transition">
         bk.
       </Link>
-      <nav className="hidden sm:flex gap-6 text-muted lowercase">
-        <a href="#current" className="hover:text-foreground transition">
-          сейчас
-        </a>
-        <a href="#projects" className="hover:text-foreground transition">
-          проекты
-        </a>
-        <a href="#achievements" className="hover:text-foreground transition">
-          победы
-        </a>
-        <a href="#contact" className="hover:text-foreground transition">
-          контакты
-        </a>
-      </nav>
+      <div className="flex items-center gap-6">
+        <nav className="hidden sm:flex gap-6 text-muted lowercase">
+          <a href="#current" className="hover:text-foreground transition">
+            {t.nav.now}
+          </a>
+          <a href="#projects" className="hover:text-foreground transition">
+            {t.nav.projects}
+          </a>
+          <a href="#achievements" className="hover:text-foreground transition">
+            {t.nav.wins}
+          </a>
+          <a href="#contact" className="hover:text-foreground transition">
+            {t.nav.contact}
+          </a>
+        </nav>
+        <div
+          role="group"
+          aria-label={t.langToggleLabel}
+          className="flex items-center gap-0.5 text-[11px] uppercase tracking-wider"
+        >
+          {locales.map((l, i) => (
+            <span key={l} className="flex items-center">
+              {i > 0 && <span className="text-muted/40 mx-1">/</span>}
+              <button
+                type="button"
+                onClick={() => setLocale(l)}
+                aria-pressed={locale === l}
+                className={`transition ${
+                  locale === l
+                    ? "text-accent"
+                    : "text-muted hover:text-foreground"
+                }`}
+              >
+                {l}
+              </button>
+            </span>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }
 
-function Hero() {
+function Hero({ t }: { t: Dictionary }) {
   return (
     <section className="mb-24">
       <p className="font-mono text-sm text-muted mb-6 lowercase">
-        <span className="text-accent">●</span> доступен для проектов
+        <span className="text-accent">●</span> {t.hero.available}
       </p>
       <p className="font-mono text-sm text-muted mb-3 lowercase">
-        привет, я <span className="text-foreground">bekarysdotme</span>
+        {t.hero.intro} <span className="text-foreground">bekarysdotme</span>
       </p>
       <Image
         src="/bekarys-me.png"
@@ -313,6 +205,21 @@ function Hero() {
           </DottedIcon>
         </a>
         <a
+          href="https://linkedin.com/in/bekarysdotme"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="linkedin"
+          title="linkedin"
+          className="opacity-90 hover:opacity-100 hover:scale-105 transition"
+        >
+          <DottedIcon id="linkedin">
+            <path
+              fill="white"
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
+            />
+          </DottedIcon>
+        </a>
+        <a
           href="https://instagram.com/bekarysdotme"
           target="_blank"
           rel="noopener noreferrer"
@@ -344,7 +251,7 @@ function Hero() {
         </a>
       </div>
       <h1 className="mt-6 text-2xl sm:text-3xl font-medium tracking-tight text-muted lowercase">
-        ml/llm-инженерия, робототехника, web3.
+        {t.hero.tagline}
       </h1>
     </section>
   );
@@ -435,36 +342,29 @@ function Section({
   );
 }
 
-function About() {
+function About({ t }: { t: Dictionary }) {
   return (
-    <Section id="about" label="01" title="обо мне">
+    <Section id="about" label="01" title={t.sections.about}>
       <div className="space-y-4 text-muted leading-relaxed lowercase">
-        <p>
-          работаю на стыке веба, машинного обучения и железа: от
-          образовательных платформ и telegram-ботов до робототехники, дронов и
-          llm-инженерии.
-        </p>
-        <p>
-          раньше — pavlodar hub. с 1 января 2026 года выполняю работы в рамках
-          государственных грант-проектов. победитель google build with ai 2024,
-          двукратный чемпион astana tech cup, призёр decentrathon 5.
-        </p>
+        {t.about.map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
       </div>
     </Section>
   );
 }
 
-function Current() {
+function Current({ t }: { t: Dictionary }) {
   return (
-    <Section id="current" label="02" title="сейчас в работе">
+    <Section id="current" label="02" title={t.sections.current}>
       <ul className="grid sm:grid-cols-2 gap-4">
-        {current.map((c) => {
+        {t.current.map((c) => {
           const inner = (
             <div className="h-full p-5 border border-border rounded-lg bg-white/[0.015] transition group-hover:border-accent/40 group-hover:bg-white/[0.03]">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <span className="font-mono text-[10px] tracking-wider text-accent flex items-center gap-1.5 lowercase">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  в&nbsp;разработке
+                  {t.inDev}
                 </span>
                 {c.type && (
                   <span className="font-mono text-[10px] tracking-wider text-muted border border-border rounded-full px-2 py-0.5 lowercase">
@@ -515,11 +415,11 @@ function Current() {
   );
 }
 
-function Projects() {
+function Projects({ t }: { t: Dictionary }) {
   return (
-    <Section id="projects" label="03" title="проекты">
+    <Section id="projects" label="03" title={t.sections.projects}>
       <ul className="divide-y divide-border">
-        {projects.map((p) => {
+        {t.projects.map((p) => {
           const inner = (
             <>
               <div className="flex items-baseline justify-between gap-4">
@@ -577,11 +477,11 @@ function Projects() {
   );
 }
 
-function Bots() {
+function Bots({ t }: { t: Dictionary }) {
   return (
-    <Section id="bots" label="04" title="telegram-боты">
+    <Section id="bots" label="04" title={t.sections.bots}>
       <ul className="grid sm:grid-cols-3 gap-3">
-        {bots.map((b) => (
+        {t.bots.map((b) => (
           <li key={b.title}>
             <a
               href={b.href}
@@ -603,11 +503,11 @@ function Bots() {
   );
 }
 
-function Achievements() {
+function Achievements({ t }: { t: Dictionary }) {
   return (
-    <Section id="achievements" label="05" title="победы">
+    <Section id="achievements" label="05" title={t.sections.achievements}>
       <ul className="divide-y divide-border">
-        {achievements.map((a) => (
+        {t.achievements.map((a) => (
           <li
             key={a.title}
             className="py-4 flex items-baseline justify-between gap-4"
@@ -628,11 +528,11 @@ function Achievements() {
   );
 }
 
-function Experience() {
+function Experience({ t }: { t: Dictionary }) {
   return (
-    <Section id="experience" label="06" title="опыт">
+    <Section id="experience" label="06" title={t.sections.experience}>
       <ul className="divide-y divide-border">
-        {experience.map((e) => (
+        {t.experience.map((e) => (
           <li
             key={e.role}
             className="py-4 flex items-baseline justify-between gap-4"
@@ -648,11 +548,11 @@ function Experience() {
   );
 }
 
-function Education() {
+function Education({ t }: { t: Dictionary }) {
   return (
-    <Section id="education" label="07" title="образование">
+    <Section id="education" label="07" title={t.sections.education}>
       <ul className="divide-y divide-border">
-        {education.map((e) => (
+        {t.education.map((e) => (
           <li key={e.institution} className="py-4 flex flex-col gap-1">
             <div className="flex items-baseline justify-between gap-4">
               <span className="text-foreground lowercase">
@@ -672,11 +572,11 @@ function Education() {
   );
 }
 
-function Languages() {
+function Languages({ t }: { t: Dictionary }) {
   return (
-    <Section id="languages" label="08" title="языки">
+    <Section id="languages" label="08" title={t.sections.languages}>
       <ul className="divide-y divide-border">
-        {languages.map((l) => (
+        {t.languages.map((l) => (
           <li
             key={l.name}
             className="py-3 flex items-baseline justify-between gap-4"
@@ -692,11 +592,11 @@ function Languages() {
   );
 }
 
-function Skills() {
+function Skills({ t }: { t: Dictionary }) {
   return (
-    <Section id="skills" label="09" title="стек">
+    <Section id="skills" label="09" title={t.sections.skills}>
       <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
+        {t.skills.map((skill) => (
           <span
             key={skill}
             className="font-mono text-sm border border-border rounded px-3 py-1.5 text-foreground/90 lowercase"
@@ -709,15 +609,12 @@ function Skills() {
   );
 }
 
-function Contact() {
+function Contact({ t }: { t: Dictionary }) {
   return (
-    <Section id="contact" label="10" title="контакты">
-      <p className="text-muted mb-6 lowercase">
-        открыт к интересным задачам и сотрудничеству. напишите — отвечаю в
-        течение дня.
-      </p>
+    <Section id="contact" label="10" title={t.sections.contact}>
+      <p className="text-muted mb-6 lowercase">{t.contactCopy}</p>
       <ul className="divide-y divide-border border-y border-border">
-        {contacts.map((c) => (
+        {t.contacts.map((c) => (
           <li key={c.label}>
             <a
               href={c.href}
@@ -740,11 +637,11 @@ function Contact() {
   );
 }
 
-function Footer() {
+function Footer({ t }: { t: Dictionary }) {
   return (
     <footer className="mt-24 pt-8 border-t border-border font-mono text-xs text-muted flex justify-between lowercase">
       <span>© {new Date().getFullYear()} bekarysdotme</span>
-      <span>сделано на next.js</span>
+      <span>{t.madeWith}</span>
     </footer>
   );
 }
