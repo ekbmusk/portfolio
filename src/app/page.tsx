@@ -17,7 +17,9 @@ const LOCALE_EVENT = "portfol-locale-change";
 function readLocale(): Locale {
   if (typeof window === "undefined") return defaultLocale;
   const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === "en" || stored === "ru" ? stored : defaultLocale;
+  return (locales as string[]).includes(stored ?? "")
+    ? (stored as Locale)
+    : defaultLocale;
 }
 
 function subscribeLocale(onChange: () => void) {

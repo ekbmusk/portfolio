@@ -1,6 +1,6 @@
-export type Locale = "en" | "ru";
+export type Locale = "en" | "ru" | "kk";
 
-export const locales: Locale[] = ["en", "ru"];
+export const locales: Locale[] = ["en", "ru", "kk"];
 export const defaultLocale: Locale = "en";
 
 type Project = {
@@ -127,6 +127,7 @@ const en: Dictionary = {
   inDev: "in development",
   about: [
     "i work at the intersection of web, machine learning, and hardware: from edtech platforms and telegram bots to robotics, drones, and llm engineering.",
+    "i've been combining physics and coding for 10 years.",
     "previously — pavlodar hub. since january 1, 2026 i've been delivering work on government grant projects. winner of google build with ai 2024, two-time astana tech cup champion, decentrathon 5 prize winner.",
   ],
   contactCopy:
@@ -342,6 +343,7 @@ const ru: Dictionary = {
   inDev: "в разработке",
   about: [
     "работаю на стыке веба, машинного обучения и железа: от образовательных платформ и telegram-ботов до робототехники, дронов и llm-инженерии.",
+    "уже 10 лет совмещаю физику и программирование.",
     "раньше — pavlodar hub. с 1 января 2026 года выполняю работы в рамках государственных грант-проектов. победитель google build with ai 2024, двукратный чемпион astana tech cup, призёр decentrathon 5.",
   ],
   contactCopy:
@@ -529,4 +531,221 @@ const ru: Dictionary = {
   ],
 };
 
-export const dictionaries: Record<Locale, Dictionary> = { en, ru };
+const kk: Dictionary = {
+  metaTitle: "bekarysdotme — портфолио",
+  metaDescription: "жеке портфолио. жобалар, дағдылар, байланыстар.",
+  nav: {
+    now: "қазір",
+    projects: "жобалар",
+    wins: "жеңістер",
+    contact: "байланыс",
+  },
+  hero: {
+    available: "жобаларға ашықпын",
+    intro: "сәлем, мен —",
+    tagline: "ml/llm-инженерия, робототехника, web3.",
+  },
+  sections: {
+    about: "өзім туралы",
+    current: "қазір жұмыстағы",
+    projects: "жобалар",
+    bots: "telegram-боттар",
+    achievements: "жеңістер",
+    experience: "тәжірибе",
+    education: "білім",
+    languages: "тілдер",
+    skills: "стек",
+    contact: "байланыс",
+  },
+  inDev: "әзірленуде",
+  about: [
+    "веб, машиналық оқыту және құрылғылар тоғысында жұмыс істеймін: білім беру платформалары мен telegram-боттардан бастап робототехника, дрондар және llm-инженерияға дейін.",
+    "физика мен программалауды 10 жылдан бері қатар алып келемін.",
+    "бұрын — pavlodar hub. 2026 жылдың 1 қаңтарынан бері мемлекеттік грант жобаларында жұмыс атқарып жүрмін. google build with ai 2024 жеңімпазы, екі дүркін astana tech cup чемпионы, decentrathon 5 жүлдегері.",
+  ],
+  contactCopy:
+    "қызықты тапсырмалар мен ынтымақтастыққа ашықпын. жазыңыз — күн ішінде жауап беремін.",
+  madeWith: "next.js-те жасалған",
+  langToggleLabel: "тіл",
+  current: [
+    {
+      title: "zhasyl.kz",
+      summary: "solana-дағы көміртек офсеті",
+      description:
+        "әр тонна co₂-ні токенизациялау, бөлшектеу және on-chain тексеру. көміртек кредиттерінің ашық нарығына арналған web3-инфрақұрылым.",
+      tags: ["solana", "web3", "climatetech"],
+      href: "https://zhasyl.kz",
+      type: null,
+    },
+    {
+      title: "зертхана автоматизациясы",
+      summary: "құрылғылардың біртұтас экожүйесі",
+      description:
+        "зертхананың барлық құрылғыларын бірыңғай жүйеге қосып, әрқайсысын трекинг және жай-күй мониторингімен қамтып жүрмін. қазір ірі инсталляция жүзеге асырылуда: 15 3d-принтер, 20 vr-жинақ, ~100 физика сенсоры, дрондар мен роботтар.",
+      tags: ["iot", "robotics", "monitoring"],
+      href: null,
+      type: null,
+    },
+    {
+      title: "smart-pasture",
+      summary: "малды цифрлық бақылау",
+      description:
+        "аграрлық сектор үшін шешім: малды камера мен дрон арқылы санау; динамигі бар gps-трекерлер — бақташы картада жайылым аумағын белгілейді, мал виртуалды шектен шықса, трекер дыбыс шығарады. акселерометрлер малдың белсенділігі мен жай-күйін қадағалайды.",
+      tags: ["computer vision", "drones", "iot", "agritech"],
+      href: null,
+      type: "тапсырыс",
+    },
+  ],
+  projects: [
+    {
+      title: "stemedu.kz",
+      description:
+        "stem саласындағы білім беру платформасы. макеттен прод-қа дейінгі веб-әзірлеме.",
+      tags: ["web", "education"],
+      href: "https://stemedu.kz",
+      year: "2025",
+    },
+    {
+      title: "atomedu.kz",
+      description:
+        "атом ғылымы мен технологиялары бойынша білім беру бастамасының сайты.",
+      tags: ["web", "education"],
+      href: "https://atomedu.kz",
+      year: "2025",
+    },
+    {
+      title: "tedx.kz",
+      description:
+        "жергілікті tedx үшін веб-жоба — лендинг және іс-шараны сүйемелдеу.",
+      tags: ["web", "events"],
+      href: "https://tedx.kz",
+      year: "2026",
+    },
+    {
+      title: "қр мемлекеттік сатып алу мониторингі",
+      description:
+        "қазақстанның мемлекеттік сатып алу тендерлері мен лоттарын талдау құралы. 200-ден астам күмәнді лот анықталды, едәуір бюджет шығыны болдырылмады. қазір техникалық себептермен жұмыс істемейді.",
+      tags: ["analytics", "govtech", "data"],
+      href: null,
+      year: "2025",
+      status: "жұмыс істемейді",
+    },
+  ],
+  bots: [
+    {
+      title: "@zhansayaamath_bot",
+      description: "математикадан дайындық пен жаттығуға арналған telegram-бот.",
+      href: "https://t.me/zhansayaamath_bot",
+    },
+    {
+      title: "@kazakhzerthana_bot",
+      description: "қазақ тіліндегі зерттеулер мен тәжірибелерге арналған бот.",
+      href: "https://t.me/kazakhzerthana_bot",
+    },
+    {
+      title: "@propickerbot",
+      description: "таңдау / іріктеуге арналған утилитарлық бот.",
+      href: "https://t.me/propickerbot",
+    },
+  ],
+  achievements: [
+    {
+      title: "google build with ai",
+      place: "1 орын",
+      year: "2024",
+    },
+    {
+      title: "astana tech cup",
+      place: "1 орын × 2 · халықаралық финалға жолдама, түркия",
+      year: "2025 · 2026",
+    },
+    {
+      title: "decentrathon 5 — zhasyl.kz",
+      place: "3 орын · $2000 жүлде",
+      year: "2026",
+    },
+    {
+      title: "international engineering mindsets competition «pi-synergy»",
+      place: "3 орын",
+      year: "2026",
+    },
+  ],
+  experience: [
+    {
+      role: "мемлекеттік грант жобаларының орындаушысы",
+      period: "2026 қаң. бастап",
+    },
+    {
+      role: "pavlodar hub",
+      period: "бұрын",
+    },
+  ],
+  education: [
+    {
+      institution:
+        "қожа ахмет ясауи атындағы халықаралық қазақ-түрік университеті",
+      program: "физика",
+      level: "1 курс",
+      period: "2025-тен бері",
+    },
+    {
+      institution:
+        "дарынды балаларға арналған «зерде» мамандандырылған мектеп-лицейі, екібастұз қ.",
+      program: "орта білім",
+      level: "",
+      period: "2025-ке дейін",
+    },
+  ],
+  languages: [
+    { name: "қазақша", level: "ана тілі" },
+    { name: "орысша", level: "ана тілі" },
+    { name: "ағылшынша", level: "ана тілі" },
+    { name: "түрікше", level: "a2" },
+    { name: "полякша", level: "a2" },
+  ],
+  skills: [
+    "machine learning",
+    "llm engineering",
+    "robotics",
+    "drones",
+    "3d-принтерлер",
+    "solana / web3",
+    "lab automation",
+    "iot",
+    "physics",
+    "python",
+    "rust",
+    "web development",
+    "docker",
+    "telegram bots",
+  ],
+  contacts: [
+    {
+      label: "email",
+      value: "tuleutaev.bekarys2025@ayu.edu.kz",
+      href: "mailto:tuleutaev.bekarys2025@ayu.edu.kz",
+    },
+    {
+      label: "github",
+      value: "github.com/ekbmusk",
+      href: "https://github.com/ekbmusk",
+    },
+    {
+      label: "telegram",
+      value: "@callmebekaa",
+      href: "https://t.me/callmebekaa",
+    },
+    {
+      label: "linkedin",
+      value: "in/bekarysdotme",
+      href: "https://linkedin.com/in/bekarysdotme",
+    },
+    {
+      label: "instagram",
+      value: "@bekarysdotme",
+      href: "https://instagram.com/bekarysdotme",
+    },
+  ],
+};
+
+export const dictionaries: Record<Locale, Dictionary> = { en, ru, kk };
