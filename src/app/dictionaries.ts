@@ -249,7 +249,7 @@ const en: Dictionary = {
   ],
   education: [
     {
-      institution: "khoja akhmet yassawi international kazakh-turkish university",
+      institution: "international kazakh-turkish university",
       program: "physics",
       level: "1st year",
       period: "since 2025",
@@ -465,8 +465,7 @@ const ru: Dictionary = {
   ],
   education: [
     {
-      institution:
-        "международный казахско-турецкий университет им. ахмеда яссауи",
+      institution: "международный казахско-турецкий университет",
       program: "физика",
       level: "1 курс",
       period: "с 2025",
@@ -682,8 +681,7 @@ const kk: Dictionary = {
   ],
   education: [
     {
-      institution:
-        "қожа ахмет ясауи атындағы халықаралық қазақ-түрік университеті",
+      institution: "халықаралық қазақ-түрік университеті",
       program: "физика",
       level: "1 курс",
       period: "2025-тен бері",
