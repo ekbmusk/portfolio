@@ -99,8 +99,9 @@ export type Dictionary = {
 };
 
 const en: Dictionary = {
-  metaTitle: "bekarysdotme — portfolio",
-  metaDescription: "personal portfolio. projects, skills, contacts.",
+  metaTitle: "Bekarys Tuleutayev (bekarysdotme) — ML/LLM Engineer, Robotics, Web3",
+  metaDescription:
+    "Bekarys Tuleutayev — ML/LLM engineer, robotics, drones, web3. Winner of Google Build with AI 2024, two-time Astana Tech Cup champion, Decentrathon 5 prize winner.",
   nav: {
     now: "now",
     projects: "projects",
@@ -315,8 +316,9 @@ const en: Dictionary = {
 };
 
 const ru: Dictionary = {
-  metaTitle: "bekarysdotme — портфолио",
-  metaDescription: "личное портфолио. проекты, навыки, контакты.",
+  metaTitle: "Бекарыс Тулеутаев (bekarysdotme) — ML/LLM-инженер, робототехника, web3",
+  metaDescription:
+    "Бекарыс Тулеутаев — ML/LLM-инженер, робототехника, дроны, web3. Победитель Google Build with AI 2024, двукратный чемпион Astana Tech Cup, призёр Decentrathon 5.",
   nav: {
     now: "сейчас",
     projects: "проекты",
@@ -531,8 +533,9 @@ const ru: Dictionary = {
 };
 
 const kk: Dictionary = {
-  metaTitle: "bekarysdotme — портфолио",
-  metaDescription: "жеке портфолио. жобалар, дағдылар, байланыстар.",
+  metaTitle: "Бекарыс Төлеутаев (bekarysdotme) — ML/LLM инженері, робототехника, web3",
+  metaDescription:
+    "Бекарыс Төлеутаев — ML/LLM инженері, робототехника, дрондар, web3. Google Build with AI 2024 жеңімпазы, екі дүркін Astana Tech Cup чемпионы, Decentrathon 5 жүлдегері.",
   nav: {
     now: "қазір",
     projects: "жобалар",
