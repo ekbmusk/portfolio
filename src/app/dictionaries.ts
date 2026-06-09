@@ -281,7 +281,7 @@ const en: Dictionary = {
   languages: [
     { name: "kazakh", level: "native" },
     { name: "russian", level: "native" },
-    { name: "english", level: "native" },
+    { name: "english", level: "b2" },
     { name: "turkish", level: "a2" },
     { name: "polish", level: "a2" },
   ],
@@ -510,7 +510,7 @@ const ru: Dictionary = {
   languages: [
     { name: "казахский", level: "родной" },
     { name: "русский", level: "родной" },
-    { name: "английский", level: "родной" },
+    { name: "английский", level: "b2" },
     { name: "турецкий", level: "a2" },
     { name: "польский", level: "a2" },
   ],
@@ -739,7 +739,7 @@ const kk: Dictionary = {
   languages: [
     { name: "қазақша", level: "ана тілі" },
     { name: "орысша", level: "ана тілі" },
-    { name: "ағылшынша", level: "ана тілі" },
+    { name: "ағылшынша", level: "b2" },
     { name: "түрікше", level: "a2" },
     { name: "полякша", level: "a2" },
   ],
