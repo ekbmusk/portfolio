@@ -399,6 +399,15 @@ function Current({ t }: { t: Dictionary }) {
                   </span>
                 ))}
               </div>
+              {c.forSale && (
+                <a
+                  href="#contact"
+                  className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-accent border border-accent/40 bg-accent/10 rounded-full px-3 py-1.5 lowercase transition hover:bg-accent/20"
+                >
+                  {t.forSaleCta}
+                  <span className="transition group-hover:translate-x-0.5">→</span>
+                </a>
+              )}
             </div>
           );
           return (

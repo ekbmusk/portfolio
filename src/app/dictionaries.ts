@@ -85,6 +85,7 @@ export type Dictionary = {
   };
   inDev: string;
   forSale: string;
+  forSaleCta: string;
   about: string[];
   contactCopy: string;
   madeWith: string;
@@ -128,7 +129,8 @@ const en: Dictionary = {
     contact: "contact",
   },
   inDev: "in development",
-  forSale: "for sale · contact",
+  forSale: "for sale",
+  forSaleCta: "get in touch",
   about: [
     "i work at the intersection of web, machine learning, and hardware: from edtech platforms and telegram bots to robotics, drones, and llm engineering.",
     "i've been combining physics and coding for 10 years.",
@@ -356,7 +358,8 @@ const ru: Dictionary = {
     contact: "контакты",
   },
   inDev: "в разработке",
-  forSale: "продаётся · контакт",
+  forSale: "продаётся",
+  forSaleCta: "связаться",
   about: [
     "работаю на стыке веба, машинного обучения и железа: от образовательных платформ и telegram-ботов до робототехники, дронов и llm-инженерии.",
     "уже 10 лет совмещаю физику и программирование.",
@@ -584,7 +587,8 @@ const kk: Dictionary = {
     contact: "байланыс",
   },
   inDev: "әзірленуде",
-  forSale: "сатылады · байланыс",
+  forSale: "сатылады",
+  forSaleCta: "байланысу",
   about: [
     "веб, машиналық оқыту және құрылғылар тоғысында жұмыс істеймін: білім беру платформалары мен telegram-боттардан бастап робототехника, дрондар және llm-инженерияға дейін.",
     "физика мен программалауды 10 жылдан бері қатар алып келемін.",
