@@ -368,10 +368,16 @@ function Current({ t }: { t: Dictionary }) {
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                   {t.inDev}
                 </span>
-                {c.type && (
-                  <span className="font-mono text-[10px] tracking-wider text-muted border border-border rounded-full px-2 py-0.5 lowercase">
-                    {c.type}
+                {c.forSale ? (
+                  <span className="font-mono text-[10px] tracking-wider text-accent border border-accent/40 bg-accent/10 rounded-full px-2 py-0.5 lowercase">
+                    {t.forSale}
                   </span>
+                ) : (
+                  c.type && (
+                    <span className="font-mono text-[10px] tracking-wider text-muted border border-border rounded-full px-2 py-0.5 lowercase">
+                      {c.type}
+                    </span>
+                  )
                 )}
               </div>
               <h3 className="text-lg font-medium group-hover:text-accent transition lowercase">

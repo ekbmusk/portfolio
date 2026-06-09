@@ -19,6 +19,7 @@ type Current = {
   tags: string[];
   href: string | null;
   type: string | null;
+  forSale?: boolean;
 };
 
 type Bot = {
@@ -83,6 +84,7 @@ export type Dictionary = {
     contact: string;
   };
   inDev: string;
+  forSale: string;
   about: string[];
   contactCopy: string;
   madeWith: string;
@@ -126,6 +128,7 @@ const en: Dictionary = {
     contact: "contact",
   },
   inDev: "in development",
+  forSale: "for sale · contact",
   about: [
     "i work at the intersection of web, machine learning, and hardware: from edtech platforms and telegram bots to robotics, drones, and llm engineering.",
     "i've been combining physics and coding for 10 years.",
@@ -162,6 +165,16 @@ const en: Dictionary = {
       tags: ["computer vision", "drones", "iot", "agritech"],
       href: null,
       type: "commission",
+    },
+    {
+      title: "fintech-index",
+      summary: "digitalization index for kazakhstani banks",
+      description:
+        "a multidimensional, explainable index of bank digitalization built from annual reports. dictionary-based text-mining enriched with fasttext contextual embeddings; the lexicon is expanded by manual selection — no automatic synonyms — to keep subjectivity in check and hold up to reviewers. output: frequency and entropy (ewm) sub-indices across 9 categories with year-dynamic weights.",
+      tags: ["nlp", "text-mining", "fasttext", "fintech"],
+      href: null,
+      type: null,
+      forSale: true,
     },
   ],
   projects: [
@@ -343,6 +356,7 @@ const ru: Dictionary = {
     contact: "контакты",
   },
   inDev: "в разработке",
+  forSale: "продаётся · контакт",
   about: [
     "работаю на стыке веба, машинного обучения и железа: от образовательных платформ и telegram-ботов до робототехники, дронов и llm-инженерии.",
     "уже 10 лет совмещаю физику и программирование.",
@@ -379,6 +393,16 @@ const ru: Dictionary = {
       tags: ["computer vision", "drones", "iot", "agritech"],
       href: null,
       type: "заказ",
+    },
+    {
+      title: "fintech-index",
+      summary: "финтех-индекс банков рк",
+      description:
+        "многомерный объяснимый индекс цифровизации банков по их годовым отчётам. словарный text-mining + контекстные эмбеддинги fasttext для обогащения лексикона; расширение словаря — ручной отбор без автоматических синонимов (контроль субъективности и защита перед рецензентами). на выходе — частотный и энтропийный (ewm) суб-индексы по 9 категориям с динамическими весами по годам.",
+      tags: ["nlp", "text-mining", "fasttext", "fintech"],
+      href: null,
+      type: null,
+      forSale: true,
     },
   ],
   projects: [
@@ -560,6 +584,7 @@ const kk: Dictionary = {
     contact: "байланыс",
   },
   inDev: "әзірленуде",
+  forSale: "сатылады · байланыс",
   about: [
     "веб, машиналық оқыту және құрылғылар тоғысында жұмыс істеймін: білім беру платформалары мен telegram-боттардан бастап робототехника, дрондар және llm-инженерияға дейін.",
     "физика мен программалауды 10 жылдан бері қатар алып келемін.",
@@ -596,6 +621,16 @@ const kk: Dictionary = {
       tags: ["computer vision", "drones", "iot", "agritech"],
       href: null,
       type: "тапсырыс",
+    },
+    {
+      title: "fintech-index",
+      summary: "қр банктерінің финтех-индексі",
+      description:
+        "банктердің цифрландыру деңгейінің көпөлшемді, түсіндірілетін индексі — жылдық есептер негізінде. сөздіктік text-mining + лексиконды байыту үшін fasttext контекстік эмбеддингтері; сөздікті кеңейту — қолмен іріктеу арқылы, автоматты синонимдерсіз (субъективтілікті бақылау және рецензенттер алдында қорғау). нәтижесінде — 9 санат бойынша жиілік және энтропиялық (ewm) суб-индекстер, жылдар бойынша динамикалық салмақтармен.",
+      tags: ["nlp", "text-mining", "fasttext", "fintech"],
+      href: null,
+      type: null,
+      forSale: true,
     },
   ],
   projects: [
