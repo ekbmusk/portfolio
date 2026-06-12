@@ -142,15 +142,6 @@ const en: Dictionary = {
   langToggleLabel: "language",
   current: [
     {
-      title: "zhasyl.kz",
-      summary: "carbon offsets on solana",
-      description:
-        "tokenization, fractionalization, and on-chain verification of every tonne of co₂. web3 infrastructure for a transparent carbon credit market.",
-      tags: ["solana", "web3", "climatetech"],
-      href: "https://zhasyl.kz",
-      type: null,
-    },
-    {
       title: "lab automation",
       summary: "unified device ecosystem",
       description:
@@ -158,15 +149,6 @@ const en: Dictionary = {
       tags: ["iot", "robotics", "monitoring"],
       href: null,
       type: null,
-    },
-    {
-      title: "smart-pasture",
-      summary: "digital livestock control",
-      description:
-        "an agritech solution: counting cattle via cameras and drones; gps trackers with speakers — the shepherd marks a grazing zone on the map and the tracker plays a sound when an animal crosses the virtual fence. accelerometers track activity and health.",
-      tags: ["computer vision", "drones", "iot", "agritech"],
-      href: null,
-      type: "commission",
     },
     {
       title: "fintech-index",
@@ -212,6 +194,22 @@ const en: Dictionary = {
       href: null,
       year: "2025",
       status: "offline",
+    },
+    {
+      title: "zhasyl.kz",
+      description:
+        "carbon offsets on solana: tokenization, fractionalization, and on-chain verification of every tonne of co₂. web3 infrastructure for a transparent carbon credit market.",
+      tags: ["solana", "web3", "climatetech"],
+      href: "https://zhasyl.kz",
+      year: "2026",
+    },
+    {
+      title: "smart-pasture",
+      description:
+        "digital livestock control. an agritech solution: counting cattle via cameras and drones; gps trackers with speakers — the shepherd marks a grazing zone on the map and the tracker plays a sound when an animal crosses the virtual fence. accelerometers track activity and health.",
+      tags: ["computer vision", "drones", "iot", "agritech"],
+      href: null,
+      year: "2026",
     },
   ],
   bots: [
@@ -371,15 +369,6 @@ const ru: Dictionary = {
   langToggleLabel: "язык",
   current: [
     {
-      title: "zhasyl.kz",
-      summary: "углеродный офсет на solana",
-      description:
-        "токенизация, дробление и on-chain верификация каждой тонны co₂. web3-инфраструктура для прозрачного рынка углеродных кредитов.",
-      tags: ["solana", "web3", "climatetech"],
-      href: "https://zhasyl.kz",
-      type: null,
-    },
-    {
       title: "автоматизация лабораторий",
       summary: "единая экосистема устройств",
       description:
@@ -387,15 +376,6 @@ const ru: Dictionary = {
       tags: ["iot", "robotics", "monitoring"],
       href: null,
       type: null,
-    },
-    {
-      title: "smart-pasture",
-      summary: "цифровой контроль скота",
-      description:
-        "решение для аграрного сектора: подсчёт коров по камерам и с дронов; gps-трекеры с динамиками — пастух размечает зону выпаса на карте, и при попытке выйти за виртуальную границу трекер подаёт звуковой сигнал. акселерометры отслеживают активность и состояние животных.",
-      tags: ["computer vision", "drones", "iot", "agritech"],
-      href: null,
-      type: "заказ",
     },
     {
       title: "fintech-index",
@@ -441,6 +421,22 @@ const ru: Dictionary = {
       href: null,
       year: "2025",
       status: "не работает",
+    },
+    {
+      title: "zhasyl.kz",
+      description:
+        "углеродный офсет на solana: токенизация, дробление и on-chain верификация каждой тонны co₂. web3-инфраструктура для прозрачного рынка углеродных кредитов.",
+      tags: ["solana", "web3", "climatetech"],
+      href: "https://zhasyl.kz",
+      year: "2026",
+    },
+    {
+      title: "smart-pasture",
+      description:
+        "цифровой контроль скота. решение для аграрного сектора: подсчёт коров по камерам и с дронов; gps-трекеры с динамиками — пастух размечает зону выпаса на карте, и при попытке выйти за виртуальную границу трекер подаёт звуковой сигнал. акселерометры отслеживают активность и состояние животных.",
+      tags: ["computer vision", "drones", "iot", "agritech"],
+      href: null,
+      year: "2026",
     },
   ],
   bots: [
@@ -600,15 +596,6 @@ const kk: Dictionary = {
   langToggleLabel: "тіл",
   current: [
     {
-      title: "zhasyl.kz",
-      summary: "solana-дағы көміртек офсеті",
-      description:
-        "әр тонна co₂-ні токенизациялау, бөлшектеу және on-chain тексеру. көміртек кредиттерінің ашық нарығына арналған web3-инфрақұрылым.",
-      tags: ["solana", "web3", "climatetech"],
-      href: "https://zhasyl.kz",
-      type: null,
-    },
-    {
       title: "зертхана автоматизациясы",
       summary: "құрылғылардың біртұтас экожүйесі",
       description:
@@ -616,15 +603,6 @@ const kk: Dictionary = {
       tags: ["iot", "robotics", "monitoring"],
       href: null,
       type: null,
-    },
-    {
-      title: "smart-pasture",
-      summary: "малды цифрлық бақылау",
-      description:
-        "аграрлық сектор үшін шешім: малды камера мен дрон арқылы санау; динамигі бар gps-трекерлер — бақташы картада жайылым аумағын белгілейді, мал виртуалды шектен шықса, трекер дыбыс шығарады. акселерометрлер малдың белсенділігі мен жай-күйін қадағалайды.",
-      tags: ["computer vision", "drones", "iot", "agritech"],
-      href: null,
-      type: "тапсырыс",
     },
     {
       title: "fintech-index",
@@ -670,6 +648,22 @@ const kk: Dictionary = {
       href: null,
       year: "2025",
       status: "жұмыс істемейді",
+    },
+    {
+      title: "zhasyl.kz",
+      description:
+        "solana-дағы көміртек офсеті: әр тонна co₂-ні токенизациялау, бөлшектеу және on-chain тексеру. көміртек кредиттерінің ашық нарығына арналған web3-инфрақұрылым.",
+      tags: ["solana", "web3", "climatetech"],
+      href: "https://zhasyl.kz",
+      year: "2026",
+    },
+    {
+      title: "smart-pasture",
+      description:
+        "малды цифрлық бақылау. аграрлық сектор үшін шешім: малды камера мен дрон арқылы санау; динамигі бар gps-трекерлер — бақташы картада жайылым аумағын белгілейді, мал виртуалды шектен шықса, трекер дыбыс шығарады. акселерометрлер малдың белсенділігі мен жай-күйін қадағалайды.",
+      tags: ["computer vision", "drones", "iot", "agritech"],
+      href: null,
+      year: "2026",
     },
   ],
   bots: [
