@@ -351,6 +351,29 @@ const en: Dictionary = {
       image: "/media/decentrathon-5.jpg",
       href: "/media/decentrathon-5.jpg",
     },
+    {
+      title: "solana summit kazakhstan",
+      description:
+        "$2000 prize for 3rd place at the national solana hackathon.",
+      year: "2026",
+      image: "/media/solana-summit-prize.jpg",
+      href: "/media/solana-summit-prize.jpg",
+    },
+    {
+      title: "solana community meetup",
+      description: "jet × jito meetup — solana international community.",
+      year: "2026",
+      image: "/media/solana-meetup.jpg",
+      href: "/media/solana-meetup.jpg",
+    },
+    {
+      title: "awards shelf",
+      description:
+        "diplomas and patents — astana tech cup and the «fibonacci robot olympiad» republican robotics championship.",
+      year: "2026",
+      image: "/media/awards-wall.jpg",
+      href: "/media/awards-wall.jpg",
+    },
   ],
   contacts: [
     {
@@ -621,6 +644,29 @@ const ru: Dictionary = {
       image: "/media/decentrathon-5.jpg",
       href: "/media/decentrathon-5.jpg",
     },
+    {
+      title: "solana summit kazakhstan",
+      description:
+        "приз $2000 за 3 место на national solana hackathon.",
+      year: "2026",
+      image: "/media/solana-summit-prize.jpg",
+      href: "/media/solana-summit-prize.jpg",
+    },
+    {
+      title: "solana community meetup",
+      description: "митап jet × jito — международное комьюнити solana.",
+      year: "2026",
+      image: "/media/solana-meetup.jpg",
+      href: "/media/solana-meetup.jpg",
+    },
+    {
+      title: "полка наград",
+      description:
+        "дипломы и патенты — astana tech cup и республиканский чемпионат по робототехнике «fibonacci robot olympiad».",
+      year: "2026",
+      image: "/media/awards-wall.jpg",
+      href: "/media/awards-wall.jpg",
+    },
   ],
   contacts: [
     {
@@ -890,6 +936,29 @@ const kk: Dictionary = {
       year: "2026",
       image: "/media/decentrathon-5.jpg",
       href: "/media/decentrathon-5.jpg",
+    },
+    {
+      title: "solana summit kazakhstan",
+      description:
+        "national solana hackathon-да 3 орын үшін $2000 жүлде.",
+      year: "2026",
+      image: "/media/solana-summit-prize.jpg",
+      href: "/media/solana-summit-prize.jpg",
+    },
+    {
+      title: "solana community meetup",
+      description: "jet × jito митабы — solana халықаралық қауымдастығы.",
+      year: "2026",
+      image: "/media/solana-meetup.jpg",
+      href: "/media/solana-meetup.jpg",
+    },
+    {
+      title: "марапаттар сөресі",
+      description:
+        "дипломдар мен патенттер — astana tech cup және «fibonacci robot olympiad» республикалық робототехника чемпионаты.",
+      year: "2026",
+      image: "/media/awards-wall.jpg",
+      href: "/media/awards-wall.jpg",
     },
   ],
   contacts: [
