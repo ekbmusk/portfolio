@@ -323,21 +323,16 @@ function DottedIcon({
 
 function Section({
   id,
-  label,
   title,
   children,
 }: {
   id: string;
-  label: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
     <section id={id} className="mb-24 scroll-mt-12">
-      <div className="mb-8 flex items-baseline gap-4 border-b border-border pb-3">
-        <span className="font-mono text-xs text-muted tracking-wider">
-          {label}
-        </span>
+      <div className="mb-8 border-b border-border pb-3">
         <h2 className="text-2xl font-medium lowercase">{title}</h2>
       </div>
       {children}
@@ -347,7 +342,7 @@ function Section({
 
 function About({ t }: { t: Dictionary }) {
   return (
-    <Section id="about" label="01" title={t.sections.about}>
+    <Section id="about" title={t.sections.about}>
       <div className="space-y-4 text-muted leading-relaxed lowercase">
         {t.about.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
@@ -359,7 +354,7 @@ function About({ t }: { t: Dictionary }) {
 
 function Current({ t }: { t: Dictionary }) {
   return (
-    <Section id="current" label="02" title={t.sections.current}>
+    <Section id="current" title={t.sections.current}>
       <ul className="grid sm:grid-cols-2 gap-4">
         {t.current.map((c) => {
           const inner = (
@@ -435,7 +430,7 @@ function Current({ t }: { t: Dictionary }) {
 
 function Projects({ t }: { t: Dictionary }) {
   return (
-    <Section id="projects" label="03" title={t.sections.projects}>
+    <Section id="projects" title={t.sections.projects}>
       <ul className="divide-y divide-border">
         {t.projects.map((p) => {
           const inner = (
@@ -497,7 +492,7 @@ function Projects({ t }: { t: Dictionary }) {
 
 function Bots({ t }: { t: Dictionary }) {
   return (
-    <Section id="bots" label="04" title={t.sections.bots}>
+    <Section id="bots" title={t.sections.bots}>
       <ul className="grid sm:grid-cols-3 gap-3">
         {t.bots.map((b) => (
           <li key={b.title}>
@@ -523,7 +518,7 @@ function Bots({ t }: { t: Dictionary }) {
 
 function Achievements({ t }: { t: Dictionary }) {
   return (
-    <Section id="achievements" label="05" title={t.sections.achievements}>
+    <Section id="achievements" title={t.sections.achievements}>
       <ul className="divide-y divide-border">
         {t.achievements.map((a) => (
           <li
@@ -548,7 +543,7 @@ function Achievements({ t }: { t: Dictionary }) {
 
 function Experience({ t }: { t: Dictionary }) {
   return (
-    <Section id="experience" label="06" title={t.sections.experience}>
+    <Section id="experience" title={t.sections.experience}>
       <ul className="divide-y divide-border">
         {t.experience.map((e) => (
           <li
@@ -568,7 +563,7 @@ function Experience({ t }: { t: Dictionary }) {
 
 function Education({ t }: { t: Dictionary }) {
   return (
-    <Section id="education" label="07" title={t.sections.education}>
+    <Section id="education" title={t.sections.education}>
       <ul className="divide-y divide-border">
         {t.education.map((e) => (
           <li key={e.institution} className="py-4 flex flex-col gap-1">
@@ -592,7 +587,7 @@ function Education({ t }: { t: Dictionary }) {
 
 function Languages({ t }: { t: Dictionary }) {
   return (
-    <Section id="languages" label="08" title={t.sections.languages}>
+    <Section id="languages" title={t.sections.languages}>
       <ul className="divide-y divide-border">
         {t.languages.map((l) => (
           <li
@@ -612,7 +607,7 @@ function Languages({ t }: { t: Dictionary }) {
 
 function Skills({ t }: { t: Dictionary }) {
   return (
-    <Section id="skills" label="09" title={t.sections.skills}>
+    <Section id="skills" title={t.sections.skills}>
       <div className="flex flex-wrap gap-2">
         {t.skills.map((skill) => (
           <span
@@ -629,7 +624,7 @@ function Skills({ t }: { t: Dictionary }) {
 
 function Media({ t }: { t: Dictionary }) {
   return (
-    <Section id="media" label="10" title={t.sections.media}>
+    <Section id="media" title={t.sections.media}>
       <ul className="grid sm:grid-cols-2 gap-4">
         {t.media.map((m) => (
           <li key={m.title}>
@@ -671,7 +666,7 @@ function Media({ t }: { t: Dictionary }) {
 
 function Contact({ t }: { t: Dictionary }) {
   return (
-    <Section id="contact" label="11" title={t.sections.contact}>
+    <Section id="contact" title={t.sections.contact}>
       <p className="text-muted mb-6 lowercase">{t.contactCopy}</p>
       <ul className="divide-y divide-border border-y border-border">
         {t.contacts.map((c) => (
