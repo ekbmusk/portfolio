@@ -57,6 +57,14 @@ type Contact = {
   href: string;
 };
 
+type MediaItem = {
+  title: string;
+  description: string;
+  year: string;
+  image: string;
+  href: string;
+};
+
 export type Dictionary = {
   metaTitle: string;
   metaDescription: string;
@@ -81,6 +89,7 @@ export type Dictionary = {
     education: string;
     languages: string;
     skills: string;
+    media: string;
     contact: string;
   };
   inDev: string;
@@ -98,6 +107,7 @@ export type Dictionary = {
   education: Education[];
   languages: Language[];
   skills: string[];
+  media: MediaItem[];
   contacts: Contact[];
 };
 
@@ -126,6 +136,7 @@ const en: Dictionary = {
     education: "education",
     languages: "languages",
     skills: "stack",
+    media: "media",
     contact: "contact",
   },
   inDev: "in development",
@@ -299,6 +310,48 @@ const en: Dictionary = {
     "docker",
     "telegram bots",
   ],
+  media: [
+    {
+      title: "utility model patent № 11764",
+      description:
+        "modular training stand for studying electrical connection types of solar cells.",
+      year: "2026",
+      image: "/media/patent-solar-stand.jpg",
+      href: "/media/patent-solar-stand.pdf",
+    },
+    {
+      title: "copyright certificate № 69190",
+      description:
+        "intelligent physics learning platform: ai, testing, and virtual lab integration.",
+      year: "2026",
+      image: "/media/copyright-physics-ai.jpg",
+      href: "/media/copyright-physics-ai.pdf",
+    },
+    {
+      title: "copyright certificate № 67432",
+      description:
+        "vr simulation for teaching the vernier scale of a caliper.",
+      year: "2026",
+      image: "/media/copyright-vr-caliper.jpg",
+      href: "/media/copyright-vr-caliper.pdf",
+    },
+    {
+      title: "copyright certificate № 67084",
+      description:
+        "stem&creativity — e-learning resource (website).",
+      year: "2026",
+      image: "/media/copyright-stem-creativity.jpg",
+      href: "/media/copyright-stem-creativity.pdf",
+    },
+    {
+      title: "decentrathon 5.0",
+      description:
+        "3rd place in the «tokenization of real-world assets» case — national solana hackathon track.",
+      year: "2026",
+      image: "/media/decentrathon-5.jpg",
+      href: "/media/decentrathon-5.jpg",
+    },
+  ],
   contacts: [
     {
       label: "email",
@@ -353,6 +406,7 @@ const ru: Dictionary = {
     education: "образование",
     languages: "языки",
     skills: "стек",
+    media: "media",
     contact: "контакты",
   },
   inDev: "в разработке",
@@ -526,6 +580,48 @@ const ru: Dictionary = {
     "docker",
     "telegram bots",
   ],
+  media: [
+    {
+      title: "патент на полезную модель № 11764",
+      description:
+        "модульный учебно-тренировочный стенд для изучения электрических видов соединения солнечных элементов.",
+      year: "2026",
+      image: "/media/patent-solar-stand.jpg",
+      href: "/media/patent-solar-stand.pdf",
+    },
+    {
+      title: "свидетельство об авторском праве № 69190",
+      description:
+        "интеллектуальная платформа для обучения физике: ai, тестирование и интеграция виртуальной лаборатории.",
+      year: "2026",
+      image: "/media/copyright-physics-ai.jpg",
+      href: "/media/copyright-physics-ai.pdf",
+    },
+    {
+      title: "свидетельство об авторском праве № 67432",
+      description:
+        "vr-симулятор для обучения работе с нониусной шкалой штангенциркуля.",
+      year: "2026",
+      image: "/media/copyright-vr-caliper.jpg",
+      href: "/media/copyright-vr-caliper.pdf",
+    },
+    {
+      title: "свидетельство об авторском праве № 67084",
+      description:
+        "stem&creativity — электронный образовательный ресурс (веб-сайт).",
+      year: "2026",
+      image: "/media/copyright-stem-creativity.jpg",
+      href: "/media/copyright-stem-creativity.pdf",
+    },
+    {
+      title: "decentrathon 5.0",
+      description:
+        "3 место в кейсе «tokenization of real-world assets» — трек national solana hackathon.",
+      year: "2026",
+      image: "/media/decentrathon-5.jpg",
+      href: "/media/decentrathon-5.jpg",
+    },
+  ],
   contacts: [
     {
       label: "email",
@@ -580,6 +676,7 @@ const kk: Dictionary = {
     education: "білім",
     languages: "тілдер",
     skills: "стек",
+    media: "media",
     contact: "байланыс",
   },
   inDev: "әзірленуде",
@@ -752,6 +849,48 @@ const kk: Dictionary = {
     "web development",
     "docker",
     "telegram bots",
+  ],
+  media: [
+    {
+      title: "пайдалы модельге патент № 11764",
+      description:
+        "күн элементтерінің электрлік жалғану түрлерін зерттеуге арналған модульдік оқу-жаттығу стенді.",
+      year: "2026",
+      image: "/media/patent-solar-stand.jpg",
+      href: "/media/patent-solar-stand.pdf",
+    },
+    {
+      title: "авторлық құқық куәлігі № 69190",
+      description:
+        "физиканы оқытуға арналған интеллектуалды платформа: ai, тестілеу және виртуалды зертхана интеграциясы.",
+      year: "2026",
+      image: "/media/copyright-physics-ai.jpg",
+      href: "/media/copyright-physics-ai.pdf",
+    },
+    {
+      title: "авторлық құқық куәлігі № 67432",
+      description:
+        "штангенциркульдің нониус шкаласын қолдануды үйретуге арналған vr-симулятор.",
+      year: "2026",
+      image: "/media/copyright-vr-caliper.jpg",
+      href: "/media/copyright-vr-caliper.pdf",
+    },
+    {
+      title: "авторлық құқық куәлігі № 67084",
+      description:
+        "stem&creativity — электрондық білім беру ресурсы (веб-сайт).",
+      year: "2026",
+      image: "/media/copyright-stem-creativity.jpg",
+      href: "/media/copyright-stem-creativity.pdf",
+    },
+    {
+      title: "decentrathon 5.0",
+      description:
+        "«tokenization of real-world assets» кейсінде 3 орын — national solana hackathon трегі.",
+      year: "2026",
+      image: "/media/decentrathon-5.jpg",
+      href: "/media/decentrathon-5.jpg",
+    },
   ],
   contacts: [
     {

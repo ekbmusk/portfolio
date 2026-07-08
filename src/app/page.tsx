@@ -68,6 +68,7 @@ export default function Home() {
       <Education t={t} />
       <Languages t={t} />
       <Skills t={t} />
+      <Media t={t} />
       <Contact t={t} />
       <Footer t={t} />
     </main>
@@ -626,9 +627,51 @@ function Skills({ t }: { t: Dictionary }) {
   );
 }
 
+function Media({ t }: { t: Dictionary }) {
+  return (
+    <Section id="media" label="10" title={t.sections.media}>
+      <ul className="grid sm:grid-cols-2 gap-4">
+        {t.media.map((m) => (
+          <li key={m.title}>
+            <a
+              href={m.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block h-full border border-border rounded-lg overflow-hidden bg-white/[0.015] transition hover:border-accent/40 hover:bg-white/[0.03]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
+                <Image
+                  src={m.image}
+                  alt={m.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 336px"
+                  className="object-cover object-top transition duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="font-mono text-sm group-hover:text-accent transition lowercase">
+                    {m.title}
+                  </h3>
+                  <span className="font-mono text-xs text-muted shrink-0">
+                    {m.year}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm text-muted leading-snug lowercase">
+                  {m.description}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  );
+}
+
 function Contact({ t }: { t: Dictionary }) {
   return (
-    <Section id="contact" label="10" title={t.sections.contact}>
+    <Section id="contact" label="11" title={t.sections.contact}>
       <p className="text-muted mb-6 lowercase">{t.contactCopy}</p>
       <ul className="divide-y divide-border border-y border-border">
         {t.contacts.map((c) => (
