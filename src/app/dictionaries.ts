@@ -388,8 +388,8 @@ const en: Dictionary = {
     },
     {
       label: "telegram",
-      value: "@callmebekaa",
-      href: "https://t.me/callmebekaa",
+      value: "@bekarysdotme",
+      href: "https://t.me/bekarysdotme",
     },
     {
       label: "linkedin",
@@ -681,8 +681,8 @@ const ru: Dictionary = {
     },
     {
       label: "telegram",
-      value: "@callmebekaa",
-      href: "https://t.me/callmebekaa",
+      value: "@bekarysdotme",
+      href: "https://t.me/bekarysdotme",
     },
     {
       label: "linkedin",
@@ -974,8 +974,8 @@ const kk: Dictionary = {
     },
     {
       label: "telegram",
-      value: "@callmebekaa",
-      href: "https://t.me/callmebekaa",
+      value: "@bekarysdotme",
+      href: "https://t.me/bekarysdotme",
     },
     {
       label: "linkedin",

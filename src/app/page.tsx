@@ -193,7 +193,7 @@ function Hero({ t }: { t: Dictionary }) {
           </DottedIcon>
         </a>
         <a
-          href="https://t.me/callmebekaa"
+          href="https://t.me/bekarysdotme"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="telegram"

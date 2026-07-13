@@ -123,7 +123,7 @@ const personJsonLd = {
   },
   sameAs: [
     "https://github.com/ekbmusk",
-    "https://t.me/callmebekaa",
+    "https://t.me/bekarysdotme",
     "https://linkedin.com/in/bekarysdotme",
     "https://instagram.com/bekarysdotme",
   ],
