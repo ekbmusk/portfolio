@@ -65,7 +65,6 @@ export default function Home() {
       <Bots t={t} />
       <Achievements t={t} />
       <Experience t={t} />
-      <Education t={t} />
       <Languages t={t} />
       <Skills t={t} />
       <Media t={t} />
@@ -553,30 +552,6 @@ function Experience({ t }: { t: Dictionary }) {
             <span className="text-foreground lowercase">{e.role}</span>
             <span className="font-mono text-xs text-muted shrink-0 lowercase">
               {e.period}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </Section>
-  );
-}
-
-function Education({ t }: { t: Dictionary }) {
-  return (
-    <Section id="education" title={t.sections.education}>
-      <ul className="divide-y divide-border">
-        {t.education.map((e) => (
-          <li key={e.institution} className="py-4 flex flex-col gap-1">
-            <div className="flex items-baseline justify-between gap-4">
-              <span className="text-foreground lowercase">
-                {e.institution}
-              </span>
-              <span className="font-mono text-xs text-muted shrink-0 lowercase">
-                {e.period}
-              </span>
-            </div>
-            <span className="text-sm text-muted lowercase font-mono">
-              {[e.program, e.level].filter(Boolean).join(" · ")}
             </span>
           </li>
         ))}

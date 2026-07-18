@@ -39,13 +39,6 @@ type Experience = {
   period: string;
 };
 
-type Education = {
-  institution: string;
-  program: string;
-  level: string;
-  period: string;
-};
-
 type Language = {
   name: string;
   level: string;
@@ -86,7 +79,6 @@ export type Dictionary = {
     bots: string;
     achievements: string;
     experience: string;
-    education: string;
     languages: string;
     skills: string;
     media: string;
@@ -104,7 +96,6 @@ export type Dictionary = {
   bots: Bot[];
   achievements: Achievement[];
   experience: Experience[];
-  education: Education[];
   languages: Language[];
   skills: string[];
   media: MediaItem[];
@@ -133,7 +124,6 @@ const en: Dictionary = {
     bots: "telegram bots",
     achievements: "wins",
     experience: "experience",
-    education: "education",
     languages: "languages",
     skills: "stack",
     media: "media",
@@ -270,21 +260,6 @@ const en: Dictionary = {
     {
       role: "pavlodar hub",
       period: "previously",
-    },
-  ],
-  education: [
-    {
-      institution: "international kazakh-turkish university",
-      program: "physics",
-      level: "1st year",
-      period: "since 2025",
-    },
-    {
-      institution:
-        "specialized school-lyceum «zerde» for gifted children, ekibastuz",
-      program: "secondary education",
-      level: "",
-      period: "until 2025",
     },
   ],
   languages: [
@@ -426,7 +401,6 @@ const ru: Dictionary = {
     bots: "telegram-боты",
     achievements: "победы",
     experience: "опыт",
-    education: "образование",
     languages: "языки",
     skills: "стек",
     media: "media",
@@ -563,21 +537,6 @@ const ru: Dictionary = {
     {
       role: "pavlodar hub",
       period: "ранее",
-    },
-  ],
-  education: [
-    {
-      institution: "международный казахско-турецкий университет",
-      program: "физика",
-      level: "1 курс",
-      period: "с 2025",
-    },
-    {
-      institution:
-        "специализированная школа-лицей «зерде» для одарённых детей, г. экибастуз",
-      program: "среднее образование",
-      level: "",
-      period: "до 2025",
     },
   ],
   languages: [
@@ -719,7 +678,6 @@ const kk: Dictionary = {
     bots: "telegram-боттар",
     achievements: "жеңістер",
     experience: "тәжірибе",
-    education: "білім",
     languages: "тілдер",
     skills: "стек",
     media: "media",
@@ -856,21 +814,6 @@ const kk: Dictionary = {
     {
       role: "pavlodar hub",
       period: "бұрын",
-    },
-  ],
-  education: [
-    {
-      institution: "халықаралық қазақ-түрік университеті",
-      program: "физика",
-      level: "1 курс",
-      period: "2025-тен бері",
-    },
-    {
-      institution:
-        "дарынды балаларға арналған «зерде» мамандандырылған мектеп-лицейі, екібастұз қ.",
-      program: "орта білім",
-      level: "",
-      period: "2025-ке дейін",
     },
   ],
   languages: [
