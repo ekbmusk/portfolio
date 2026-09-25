@@ -88,7 +88,7 @@ function Header({
       <Link href="/" className="text-foreground hover:text-accent transition">
         bk.
       </Link>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 sm:gap-6">
         <nav className="hidden sm:flex gap-6 text-muted lowercase">
           <a href="#current" className="hover:text-foreground transition">
             {t.nav.now}
@@ -103,6 +103,12 @@ function Header({
             {t.nav.contact}
           </a>
         </nav>
+        <a
+          href="/hackalem"
+          className="whitespace-nowrap text-accent hover:text-foreground transition"
+        >
+          HackAlem Atlas
+        </a>
         <div
           role="group"
           aria-label={t.langToggleLabel}
