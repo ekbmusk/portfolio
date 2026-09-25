@@ -21,7 +21,7 @@
 <meta name="description" content="Разбор всех репозиториев организации BAITC-Hacks с финала HackAlem.ai: кейсы, подходы, стек, README, структура и коммиты команд.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@500;600;700&display=swap">
 <style>
 :root{
   --bg:#F1F4F3; --surface:#FFFFFF; --surface-2:#E8EDEB; --surface-3:#DDE4E1;
@@ -442,11 +442,64 @@ main:focus{outline:none}
   .hm{min-width:560px}
   .foot{padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
 }
+
+/* Shared portfolio navigation. */
+.portfolio-header{background:#0a0a0a;color:#ededed;border-bottom:1px solid #1f1f1f;padding:22px var(--gutter);font:14px/1.5 "Geist Mono",ui-monospace,monospace}
+.portfolio-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1440px;margin:auto}
+.portfolio-header a{text-decoration:none;color:#9ca3af;transition:color .15s}
+.portfolio-header a:hover{color:#ededed}
+.portfolio-header .portfolio-brand{color:#ededed;font-size:16px}
+.portfolio-header .portfolio-brand:hover{color:#d4ff3d}
+.portfolio-links{display:flex;gap:24px;align-items:center;margin-left:auto}
+.portfolio-languages{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+.portfolio-languages span{color:#6b7280}
+.portfolio-languages button{background:none;border:0;padding:6px 2px;color:#9ca3af;cursor:pointer;text-transform:uppercase}
+.portfolio-languages button[aria-pressed="true"]{color:#d4ff3d}
+.portfolio-header :focus-visible{outline-color:#d4ff3d}
+.atlas-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 24px}
+.atlas-author{margin:0;color:var(--muted);font-size:13px}
+.atlas-author a{font-weight:500;white-space:nowrap}
+@media(max-width:639px){.portfolio-nav{flex-wrap:wrap;gap:10px 20px}.portfolio-links{order:3;width:100%;margin:0;gap:12px 20px;flex-wrap:wrap;font-size:12px}.portfolio-languages{margin-left:auto}.portfolio-header{padding-block:14px}}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body data-standalone="1">
 <a class="skip" href="#main">К содержимому</a>
+<header class="portfolio-header">
+  <nav class="portfolio-nav" aria-label="Навигация bekarys.me">
+    <a class="portfolio-brand" href="https://www.bekarys.me/" aria-label="bekarys.me — главная">bk.</a>
+    <div class="portfolio-links">
+      <a href="https://www.bekarys.me/#current" data-portfolio-label="0">now</a>
+      <a href="https://www.bekarys.me/#projects" data-portfolio-label="1">projects</a>
+      <a href="https://www.bekarys.me/#achievements" data-portfolio-label="2">wins</a>
+      <a href="https://www.bekarys.me/#contact" data-portfolio-label="3">contact</a>
+    </div>
+    <div class="portfolio-languages" role="group" aria-label="Язык навигации сайта">
+      <button type="button" data-portfolio-locale="en" aria-pressed="true">en</button><span aria-hidden="true">/</span>
+      <button type="button" data-portfolio-locale="ru" aria-pressed="false">ru</button><span aria-hidden="true">/</span>
+      <button type="button" data-portfolio-locale="kk" aria-pressed="false">kk</button>
+    </div>
+  </nav>
+</header>
+<script>
+(() => {
+  const labels = {en:['now','projects','wins','contact'],ru:['сейчас','проекты','победы','контакты'],kk:['қазір','жобалар','жеңістер','байланыс']};
+  function update(locale) {
+    if (!Object.hasOwn(labels, locale)) locale = 'en';
+    document.querySelectorAll('[data-portfolio-label]').forEach(a => { a.textContent = labels[locale][Number(a.dataset.portfolioLabel)]; });
+    document.querySelectorAll('[data-portfolio-locale]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.portfolioLocale === locale)));
+  }
+  let locale = 'en';
+  try { locale = localStorage.getItem('portfol-locale') || 'en'; } catch (_) {}
+  update(locale);
+  document.querySelectorAll('[data-portfolio-locale]').forEach(b => b.addEventListener('click', () => {
+    const locale = b.dataset.portfolioLocale;
+    try { localStorage.setItem('portfol-locale', locale); } catch (_) {}
+    update(locale);
+  }));
+})();
+</script>
 <header class="top">
   <div class="topbar">
     <div class="eyebrow">BAITC-Hacks · HackAlem.ai · финал 23 сентября 2026</div>
@@ -458,7 +511,10 @@ main:focus{outline:none}
       <button class="btn theme" id="theme" type="button" hidden aria-label="Переключить тему"><span id="theme-ic" aria-hidden="true">◐</span><span id="theme-l">Тема</span></button>
     </div>
   </div>
-  <h1>Атлас решений <em>HackAlem</em></h1>
+  <div class="atlas-heading">
+    <h1>Атлас решений <em>HackAlem</em></h1>
+    <p class="atlas-author">Автор разбора — <a href="https://github.com/govnejri/hackalem-atlas" target="_blank" rel="noopener noreferrer">govnejri ↗</a></p>
+  </div>
   <p class="lede" id="lede"></p>
   <div class="kpis" id="kpis"></div>
 </header>
